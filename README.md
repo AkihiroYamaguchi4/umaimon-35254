@@ -26,7 +26,6 @@
 | chef_nickname            | string | null: false              |
 | chef_family_name         | string | null: false              |
 | chef_first_name          | string | null: false              |
-| chef_birth_id            | date   | null: false              |
 | chef_career              | text   | null: false              |
 | chef_belong              | string | null: false              |
 | chef_phone_number        | string | null: false              |
