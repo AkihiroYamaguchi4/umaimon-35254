@@ -29,6 +29,7 @@
 | chef_career              | text   | null: false              |
 | chef_belong              | string | null: false              |
 | chef_phone_number        | string | null: false              |
+| chef_birth_id            | string | null: false              |
 ### Association
 
 - has_many :courses

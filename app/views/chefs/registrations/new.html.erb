@@ -4,48 +4,48 @@
   <%= render "chefs/shared/error_messages", resource: resource %>
  
   <div class="field">
-    <%= f.label :chef_nickname %><br />
-    <%= f.email_field :chef_nickname, autofocus: true, autocomplete: "chef_nickname" %>
+   <label class="form-text">ニックネーム</label><br />
+    <%= f.text_area :chef_nickname, autofocus: true, autocomplete: "chef_nickname" %>
   </div>
 
   <div class="field">
-    <%= f.label :chef_family_name %><br />
-    <%= f.email_field :chef_family_name, autofocus: true, autocomplete: ":chef_family_name" %>
+    <label class="form-text">名字</label><br />
+    <%= f.text_area :chef_family_name, autofocus: true, autocomplete: ":chef_family_name" %>
   </div>
   
   <div class="field">
-    <%= f.label :chef_first_name %><br />
-    <%= f.email_field :chef_first_name, autofocus: true, autocomplete: ":chef_first_name" %>
+    <label class="form-text">名前</label><br />
+    <%= f.text_area :chef_first_name, autofocus: true, autocomplete: ":chef_first_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <label class="form-text">メールアドレス</label><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :belong %><br />
-    <%= f.email_field :belong, autofocus: true, autocomplete: "belong" %>
+   <label class="form-text">所属</label><br />
+    <%= f.text_area :belong, autofocus: true, autocomplete: "belong" %>
   </div>
 
   <div class="field">
-    <%= f.label :chef_phone_number %><br />
-  <%= f.email_field :chef_phone_number, autofocus: true, autocomplete: "chef_phone_number" %>
+<label class="form-text">電話番号</label><br />
+  <%= f.text_area :chef_phone_number, autofocus: true, autocomplete: "chef_phone_number" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>パスワード半角<%= @minimum_password_length %> 文字</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <label class="form-text">パスワード（確認）</label><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 <div class='input-birth-wrap'>
+<label class="form-text">生年月日</label><br />
       <%= raw sprintf(
                   f.date_select(
                     :chef_birth_id,
@@ -58,6 +58,11 @@
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
+ <div class="field">
+<label class="form-text">経歴</label><br />
+  <%= f.text_area :chef_career, autofocus: true, autocomplete: "career" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

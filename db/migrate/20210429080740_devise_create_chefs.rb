@@ -11,6 +11,7 @@ class DeviseCreateChefs < ActiveRecord::Migration[6.0]
       t.string :chef_first_name,    null: false
       t.string :belong,             null: false
       t.string :chef_phone_number,  null: false
+      t.text   :chef_career,        null: false
       t.date   :chef_birth_id,      null: false
   
       ## Recoverable

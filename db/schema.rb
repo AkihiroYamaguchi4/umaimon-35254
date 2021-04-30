@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_080740) do
     t.string "chef_first_name", null: false
     t.string "belong", null: false
     t.string "chef_phone_number", null: false
+    t.text "chef_career", null: false
     t.date "chef_birth_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
