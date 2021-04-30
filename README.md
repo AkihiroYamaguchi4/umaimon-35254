@@ -9,7 +9,7 @@
 | user_nickname          | string | null: false              |
 | user_family_name       | string | null: false              |
 | user_first_name        | string | null: false              |
-| user_birth_id          | date   | null: false            　|
+| user_birth_id          | date   | null: false              |
  
 ### Association
 

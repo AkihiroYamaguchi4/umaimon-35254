@@ -3,6 +3,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "chefs/shared/error_messages", resource: resource %>
  
+<div class="weight-bold-text">
+        本人画像
+    </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :avatar %>
+      </div>
+
   <div class="field">
    <label class="form-text">ニックネーム</label><br />
     <%= f.text_area :chef_nickname, autofocus: true, autocomplete: "chef_nickname" %>

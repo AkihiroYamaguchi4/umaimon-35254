@@ -42,7 +42,7 @@ class Chefs::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :chef_nickname, :chef_family_name, :chef_first_name , :chef_birth_id, :belong, :chef_phone_number])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :chef_nickname, :chef_family_name, :chef_first_name , :chef_birth_id, :belong, :chef_phone_number,:avtar])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

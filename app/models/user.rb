@@ -10,4 +10,5 @@ class User < ApplicationRecord
             validates :user_family_name
             validates :user_first_name
           end
+        end
 end
