@@ -1,0 +1,29 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to '#', class:"furima-icon"), "/" %>
+   
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+       <li><%= link_to 'ご利用の流れ', "#", class: "category-list" %></li>
+       <li><%= link_to 'よくある質問Q＆A', "#", class: "brand-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+       <% if user_signed_in? %>
+         <li><%= link_to current_user.nickname, "#", class: "user-nickname"%> </li> 
+         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
+       <% else %>
+         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+       <% end %>
+       <% if chef_signed_in? %>
+         <li><%= link_to current_chef.nickname, "#", class: "chef-nickname"%> </li> 
+         <li><%= link_to 'ログアウト', destroy_shef_session_path, method: :delete, class: "logout"%> </li> 
+       <% else %>
+         <li><%= link_to 'シェフログイン', new_chef_session_path, class: "login" %></li>
+         <li><%= link_to 'シェフ新規登録', new_chef_registration_path, class: "sign-up" %></li>
+       <% end %>
+
+     </ul>
+  </div>
+</header>
