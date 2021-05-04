@@ -20,7 +20,7 @@ class Chefs::CoursesController < ApplicationController
  private
 
  def course_params
-  params.require(:course).permit(:course_title, :description, :price, :start_date, :end_date, :images[]).merge(chef_id: current_chef.id)
+  params.require(:course).permit(:course_title, :description, :price, :start_datetime, :end_datetime, :images[]).merge(chef_id: current_chef.id)
 
  end
 end

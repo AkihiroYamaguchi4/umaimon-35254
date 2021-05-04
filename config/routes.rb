@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :chefs, controllers: {
     sessions:      'chefs/sessions',
     passwords:     'chefs/passwords',
     registrations: 'chefs/registrations'
   }
-  namespace :chefs do
+   namespace :chefs do
     resources :courses, only: [:index , :new, :create]
   end
 
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
- 
+  root to: "home#index"
 end
