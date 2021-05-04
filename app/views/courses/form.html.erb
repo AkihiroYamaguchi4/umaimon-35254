@@ -1,0 +1,25 @@
+%= form_with model: @course, local: true do |f|%>
+  <div class="field">
+    <%= f.label :course_title, "コースのタイトル" %><br />
+    <%= f.text_field :course_title, id:"course_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "コース説明" %><br />
+    <%= f.text_area :description, class: :form__text, id:"course_destription" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, "コンセプト" %><br />
+    <%= f.text_area :price, class: :form__text, id:"course_price" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :course_images, "プロトタイプの画像" %><br />
+    <%= f.file_field :image, id:"course_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
