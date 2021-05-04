@@ -4,8 +4,8 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.string :course_title, null: false
       t.string :description,  null: false
       t.string :price,        null: false
-      t.string :start_date,   null: false
-      t.string :end_date,     null: false
+      t.date   :start_date,   null: false
+      t.date   :end_date,     null: false
       t.references :chef,     null: false,foreign_key: true
       t.timestamps
     end

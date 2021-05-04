@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2021_05_03_134207) do
     t.string "course_title", null: false
     t.string "description", null: false
     t.string "price", null: false
-    t.string "start_date", null: false
-    t.string "end_date", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.bigint "chef_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
