@@ -5,7 +5,7 @@ class Course < ApplicationRecord
   validates :course_title
   validates :description
   validates :price
-  validates :start_date
-  validates :end_date
+  validates :start_datetime
+  validates :end_datetime
   end
 end
