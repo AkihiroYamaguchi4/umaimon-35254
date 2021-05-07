@@ -18,16 +18,17 @@
     <%= f.label '#', "コースの画像" %><br />
      <%= f.file_field '#', name: '#', id:"course-images" %>
   </div>
+
    <%# start_dateを登録 %>
   <div class="field">日程<br />
     <%= f.label :start_datetime %>
-    <%= f.datetime_select :start_datetime %>
+    <%= f.text_field :start_datetime,id:"flatpickr" %>
   </div>
 
   <%# #end_dateを登録 %>
   <div class="field"><br />
     <%= f.label :end_datetime %>
-    <%= f.datetime_select :end_datetime %>
+    <%= f.text_field :end_datetime,id:"flatpickr"%>
   </div>
 
   <div class="actions">
