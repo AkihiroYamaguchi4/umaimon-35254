@@ -59,6 +59,7 @@
 | allergies                | string     | null: false                   |
 | place                    | string     | null: false                   |
 | user_phone_number        | string     | null: false                   |
+| request                  | string     |                               |
 | course_id                | references |null: false, foreign_key: true |
 | user_id                  | references |null: false, foreign_key: true |
 ### Association

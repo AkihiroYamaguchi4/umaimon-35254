@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
   belongs_to :chef
+  has_one :reservation
   has_many_attached :course_images
   with_options presence: true do
     validates :course_title

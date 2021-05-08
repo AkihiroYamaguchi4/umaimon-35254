@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  namespace :users do
+    resources :reservations, only: [:new, :create]
+  end
+
   root to: "home#index"
 end
