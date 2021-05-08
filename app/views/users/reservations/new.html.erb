@@ -1,0 +1,30 @@
+<%= form_with model: @reservation, url: new_users_reservation_path,  local: true do |f|%>
+ <%= render 'shared/error_messages', model: @reservation %>
+  
+  <div class="field">
+    <%= f.label :allergies, "アレルギー" %><br />
+    <%= f.text_field :allergies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place, "利用場所" %><br />
+    <%= f.text_area :place, class: :form__text %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :user_phone_number, "代表者電話番号" %><br />
+    <%= f.text_field :user_phone_number %>
+  </div>
+ <div class="field">
+    <%= f.label :guests, "利用人数" %><br />
+    <%= f.text_area :guests, class: :form__text %>人（予定）
+  </div>
+ <div class="field">
+    <%= f.label :request, "その他要望" %><br />
+    <%= f.text_area :request, class: :form__text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
