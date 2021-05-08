@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_102332) do
+ActiveRecord::Schema.define(version: 2021_05_03_134207) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 2021_04_30_102332) do
     t.index ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true
   end
 
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "course_title", null: false
+    t.string "description", null: false
+    t.string "price", null: false
+    t.datetime "start_datetime", null: false
+    t.datetime "end_datetime", null: false
+    t.bigint "chef_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chef_id"], name: "index_courses_on_chef_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
     t.string "encrypted_password", null: false
@@ -69,4 +81,5 @@ ActiveRecord::Schema.define(version: 2021_04_30_102332) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "courses", "chefs"
 end

@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Umaimon35254</title>
+    <title>美味いもんシェフ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+  <script>
+   flatpickr("#flatpickr", {locale:"ja"});
+  </script>
+
   </head>
 
   <body>
-    <%= yield %>
+
+  <%=yield %>
+
+  <script>
+
+
+flatpickr("#flatpickr", {
+locale:"ja",
+minDate:"today",
+enableTime: true,
+dateFormat: "Y-m-d H:i",
+});
+</script>
   </body>
 </html>

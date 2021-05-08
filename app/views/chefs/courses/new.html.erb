@@ -1,0 +1,40 @@
+<%= form_with model: @course, url: chefs_courses_path,  local: true do |f|%>
+ <%= render 'shared/error_messages', model: @course %>
+  
+  <div class="field">
+    <%= f.label :course_title, "コースのタイトル" %><br />
+    <%= f.text_field :course_title, id:"course_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "コース説明" %><br />
+    <%= f.text_area :description, class: :form__text, id:"course_destription" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, "一人あたりの金額（税込み）" %><br />
+    <%= f.text_area :price, class: :form__text, id:"course_price" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :course_images, "コースの画像" %><br />
+     <%= f.file_field :course_images, name: 'course[course_images][]', id:"course-images" %>
+   <div id="image-list"></div>
+  </div>
+
+   <%# start_dateを登録 %>
+  <div class="field"> 日程
+   <%= f.label :start_datetime %><br />
+    <%= f.text_field :start_datetime,id:"flatpickr" %>
+  </div>
+
+  <%# #end_dateを登録 %>
+  <div class="field"><br />
+    <%= f.label :end_datetime %>
+    <%= f.text_field :end_datetime,id:"flatpickr"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
