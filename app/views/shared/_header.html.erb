@@ -1,0 +1,20 @@
+ <% if user_signed_in?%>
+      <%= "ログイン中のユーザー #{current_user.user_nickname}" %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
+      <% else%>
+       <%= link_to 'ユーザー新規登録', new_user_registration_path%>
+       <%= link_to 'ユーザーログイン', new_user_session_path%>
+       <%end%>
+        
+        <%= link_to 'シェフログイン', new_chef_session_path%>
+ 
+    <% if chef_signed_in? %>
+      <%= "ログイン中のシェフ #{current_chef.chef_nickname}" %>
+      
+       <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
+      <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
+      
+      <% else%>
+       <%= link_to 'シェフ新規登録', new_chef_registration_path%>
+       <%= link_to 'ログイン', new_chef_session_path%>
+       <%end%>

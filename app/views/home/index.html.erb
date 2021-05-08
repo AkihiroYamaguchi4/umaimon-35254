@@ -1,23 +1,34 @@
  <h1> Chefs</h1>
-      <% if user_signed_in?%>
-      <%= "ログイン中のユーザー #{current_user.user_nickname}" %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
-      <% else%>
-       <%= link_to 'ユーザー新規登録', new_user_registration_path%>
-       <%= link_to 'ユーザーログイン', new_user_session_path%>
-       <%end%>
+
+ <%= render "shared/header" %>
+ 
+  <%# 商品一覧 %>
+  <div class='course-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <%= link_to '新規投稿コース', "#", class: "subtitle" %>
+    <ul class='course-lists'>
+
+       <%# <% if @courses[0] != nil %>  
+      <% @courses.each do |course| %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <div class='course-img-content'>
         
-        <%= link_to 'シェフログイン', new_chef_session_path%>
- 
-    <% if chef_signed_in? %>
-      <%= "ログイン中のシェフ #{current_chef.chef_nickname}" %>
-      
-       <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
-      <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
-      
-      <% else%>
-       <%= link_to 'シェフ新規登録', new_chef_registration_path%>
-       <%= link_to 'ログイン', new_chef_session_path%>
-       <%end%>
- 
- 
+          <%= image_tag course.course_images[0], class: "course-img" %>
+          <%# <% if course.purchase.present? %>
+          <div class='sold-out'>
+            <span>予約済み</span>
+          </div>
+         <%# <% end  %> 
+        </div> 
+          <div class='course-info'>
+          <h3 class='course-name'>
+            <%= course.course_title %>
+          </h3>
+          <div class='course-price'>
+            <span><%= course.price %>円<br>
+                      </div>
+        </div>
+         <% end %> 
+      </li>
+      <% end %> 
