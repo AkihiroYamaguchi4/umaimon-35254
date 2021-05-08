@@ -1,17 +1,12 @@
 FactoryBot.define do
   factory :course do
-    chef_nickname {Faker::Name.last_name}
-    email {Faker::Internet.free_email}
-    password { 'a1' + Faker::Internet.password(min_length: 6) }
-    password_confirmation { password }
-    chef_family_name { '佐藤' }
-    chef_first_name { '太郎' }
-    chef_birth_id { Faker::Date.between(from: '1930-01-01', to: '2015-12-31') }
-    belong { 'ホテル' }
-    chef_career { 'シェフとして勤務' }
-    chef_phone_number { '08011111111' }
-    after(:build) do |chef|
-      chef.avatar.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    course_title {Faker::Name.last_name}
+    description { '説明' }
+    price { '999999' }
+    start_datetime { '2021/5/7 10:00' }
+    end_datetime { '2021/5/7 13:00'  }
+    after(:build) do |course|
+      course.course_images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
   end
  end
 end

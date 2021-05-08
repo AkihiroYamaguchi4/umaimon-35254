@@ -13,17 +13,17 @@ class Course < ApplicationRecord
     validate :start_end_check
   
   
-  def start_check
-     unless start_datetime == nil 
+  def start_check 
+    unless start_datetime == nil
             errors.add(:start_datetime, "開始時刻は現在の日時より遅い時間を選択してください") if self.start_datetime < DateTime.now
     end
-  end
+          end
+
 
   def start_end_check
-    unless end_datetime == nil 
+    unless end_datetime == nil &&  start_datetime == nil
       errors.add(:end_datetime, "終了時刻は開始時刻より遅い時間を選択してください") if self.start_datetime > self.end_datetime
     end
   end
-  
 end
 
