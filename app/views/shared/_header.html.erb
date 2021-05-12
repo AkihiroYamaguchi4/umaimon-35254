@@ -1,15 +1,16 @@
- <% if user_signed_in?%>
-      <%= "ログイン中のユーザー #{current_user.user_nickname}" %>
+ <h1> 関西美味いもんシェフ</h1>
+ 　　<% if user_signed_in?%>
+      <%= " #{current_user.user_nickname}さん、ようこそ" %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
       <% else%>
        <%= link_to 'ユーザー新規登録', new_user_registration_path%>
        <%= link_to 'ユーザーログイン', new_user_session_path%>
        <%end%>
         
-        <%= link_to 'シェフログイン', new_chef_session_path%>
+        
  
-    <% if chef_signed_in? %>
-      <%= "ログイン中のシェフ #{current_chef.chef_nickname}" %>
+    　<% if chef_signed_in? %>
+      <%= " #{current_chef.chef_nickname}シェフ、ようこそ" %>
       
        <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
       <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
