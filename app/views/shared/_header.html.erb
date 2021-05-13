@@ -1,21 +1,38 @@
- <h1> 関西美味いもんシェフ</h1>
- 　　<% if user_signed_in?%>
-      <%= " #{current_user.user_nickname}さん、ようこそ" %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
-      <% else%>
-       <%= link_to 'ユーザー新規登録', new_user_registration_path%>
-       <%= link_to 'ユーザーログイン', new_user_session_path%>
-       <%end%>
-        
-        
+ <div class='search-bar-contents'>
+    <%= link_to image_tag("umaimon-chef-logo.png", class:"umaimon-icon"), "/" %>
+   <div class='nav'>
+    <div class='nav-contents'>
+     <ul class='lists-left'>
+       <li class='header-list'><%= link_to 'ご利用の流れ', '#'%>
+       <li class='header-list'><%= link_to 'よくある質問', '#'%>
+      </ul>
+     <ul class='lists-right'>
+        <% if user_signed_in?%>
+          <li class='header-list'><%= " #{current_user.user_nickname}さん、ようこそ" %>
+          <li class='header-list'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
+        <% else%>
+          <li class='header-list'><%= link_to '新規登録', new_user_registration_path%>
+          <li class='header-list'><%= link_to 'ユーザーログイン', new_user_session_path%>
+        <%end%>
  
-    　<% if chef_signed_in? %>
-      <%= " #{current_chef.chef_nickname}シェフ、ようこそ" %>
+       <% if chef_signed_in? %>
+       <li class='header-list'><%= " #{current_chef.chef_nickname}シェフ、ようこそ" %>
       
-       <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
-      <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
+       
+        <li class='header-list'><%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
       
-      <% else%>
-       <%= link_to 'シェフ新規登録', new_chef_registration_path%>
-       <%= link_to 'ログイン', new_chef_session_path%>
+       <% else%>
+        <li class='header-list'><%= link_to 'シェフ募集', new_chef_registration_path%>
+        <li class='header-list'><%= link_to 'ログイン', new_chef_session_path%>
        <%end%>
+     </ul>
+   </div>
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードから探す'>
+      <input class='input-box' placeholder='希望場所から探す'>
+      <input class='input-box' placeholder='希望時間帯から探す'>
+    </form>
+   
+  </div>
+</div>
+    

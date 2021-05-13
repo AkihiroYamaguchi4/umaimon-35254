@@ -1,18 +1,47 @@
 
 
  <%= render "shared/header" %>
- <div class="list-pict">
+ <div class="main-board">
+   <div class="main-image">   
+    </div>
+      <div class="main-contents">
+       <h2 class="title">
+         関西で一流の<br>
+         シェフのお料理を<br>
+         ご家庭で気軽に食べらる<br>
+        </h2>
+        <h4 class="subtitle">
+         記念日やホームパーティ<br>
+         お料理教室など<br>
+         プロがあなたの要望にお答えします
+        </h4>
+      </div>
+  </div>
 </div>
-  <div class='course-contents'>
-    <h2 class='title'>おすすめコース！！</h2>
-    <%= link_to '新規投稿コース', "#", class: "subtitle" %>
-    <ul class='course-lists'>
 
+  <div class='chefs-contents'>
+     <%= link_to '新規登録シェフ', "#", class: "subtitle" %>
+    <ul class='chef-lists'>
+       <%# <% if @chefs[0] != nil %>  
+      <%# <% @chefs.each do |chef| %> %>
+       <li class='list'>
+         <%=link_to '#' do %>
+           <div class='chef-avatar-content'>
+            <%# <%= image_tag chef.avatar, class: "chef-avatar" %> %>
+            </div>
+        <%# <% end %>  %>
+     <% end %>  %>
+    </ul>
+   </div> 
+  <div class='course-contents'>
+     <h2 class='title'>おすすめコース！！</h2>
+     <%= link_to '新規投稿コース', "#", class: "subtitle" %>
+    <ul class='course-lists'>
        <%# <% if @courses[0] != nil %>  
       <% @courses.each do |course| %>
       <li class='list'>
         <%= link_to '#' do %>
-        <div class='course-img-content'>
+         <div class='course-img-content'>
         
           <%= image_tag course.course_images[0], class: "course-img" %>
           <%# <% if course.purchase.present? %>
@@ -20,15 +49,15 @@
             <span>予約済み</span>
           </div>
          <%# <% end  %> 
-        </div> 
+         </div> 
           <div class='course-info'>
-          <h3 class='course-name'>
-            <%= course.course_title %>
-          </h3>
-          <div class='course-price'>
-            <span><%= course.price %>円<br>
-                      </div>
-        </div>
-         <% end %> 
-      </li>
+             <h3 class='course-name'>
+              <%= course.course_title %>
+             </h3>
+             <div class='course-price'>
+              <span><%= course.price %>円<br>
+             </div>
+         </div>
       <% end %> 
+      </ul>
+ <% end %> 
