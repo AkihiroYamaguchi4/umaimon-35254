@@ -20,44 +20,35 @@
 </div>
 
   <div class='chefs-contents'>
-     <%= link_to '新規登録シェフ', "#", class: "subtitle" %>
+     <%= link_to '〜おすすめシェフ〜', "#", class: "subtitle" %>
     <ul class='chef-lists'>
        <%# <% if @chefs[0] != nil %>  
-      <%# <% @chefs.each do |chef| %> %>
-       <li class='list'>
+      <%# <% @chefs.each do |chef| %> 
          <%=link_to '#' do %>
            <div class='chef-avatar-content'>
-            <%# <%= image_tag chef.avatar, class: "chef-avatar" %> %>
+            <%# <%= image_tag chef.avatar, class: "chef-avatar" %> 
             </div>
-        <%# <% end %>  %>
-     <% end %>  %>
+        <%# <% end %>  
+     <% end %>  
     </ul>
    </div> 
   <div class='course-contents'>
-     <h2 class='title'>おすすめコース！！</h2>
-     <%= link_to '新規投稿コース', "#", class: "subtitle" %>
     <ul class='course-lists'>
        <%# <% if @courses[0] != nil %>  
-      <% @courses.each do |course| %>
-      <li class='list'>
-        <%= link_to '#' do %>
+       <% @courses.each do |course| %>
          <div class='course-img-content'>
-        
-          <%= image_tag course.course_images[0], class: "course-img" %>
+          <%= image_tag course.course_images[0],size:'200x200', class: "course-img" %>
           <%# <% if course.purchase.present? %>
-          <div class='sold-out'>
-            <span>予約済み</span>
-          </div>
          <%# <% end  %> 
          </div> 
-          <div class='course-info'>
+           <%# <div class='course-info'>
              <h3 class='course-name'>
               <%= course.course_title %>
-             </h3>
-             <div class='course-price'>
-              <span><%= course.price %>円<br>
-             </div>
-         </div>
-      <% end %> 
+             <%#</h3>  
+             <%# <div class='course-price'>
+              <span><%= course.price %>
+             <%# </div>   %>
+         <%# </div> %>
+          <% end %> 
       </ul>
- <% end %> 
+   </div> 

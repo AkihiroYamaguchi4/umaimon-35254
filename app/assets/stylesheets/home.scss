@@ -28,4 +28,17 @@
   
   padding-left: 5px;
 }
+.course-img-content{
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
 
+.course-contents {
+  width: 100vw;
+background-color: brown;
+display: flex;
+margin-top: -20vh;
+}
