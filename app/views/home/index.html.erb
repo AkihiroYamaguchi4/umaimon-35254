@@ -20,7 +20,6 @@
 </div>
 
   <div class='chefs-contents'>
-     <%= link_to '〜おすすめシェフ〜', "#", class: "subtitle" %>
     <ul class='chef-lists'>
        <%# <% if @chefs[0] != nil %>  
       <%# <% @chefs.each do |chef| %> 
@@ -32,12 +31,13 @@
      <% end %>  
     </ul>
    </div> 
-  <div class='course-contents'>
+  <div class="course-contents">
+  <h2 class="course-title">おすすめシェフ</h2>
     <ul class='course-lists'>
        <%# <% if @courses[0] != nil %>  
        <% @courses.each do |course| %>
          <div class='course-img-content'>
-          <%= image_tag course.course_images[0],size:'200x200', class: "course-img" %>
+          <%= image_tag course.course_images[0], class: "course-img" %>
           <%# <% if course.purchase.present? %>
          <%# <% end  %> 
          </div> 

@@ -3,27 +3,27 @@
    <div class='nav'>
     <div class='nav-contents'>
      <ul class='lists-left'>
-       <li class='header-list'><%= link_to 'ご利用の流れ', '#'%>
-       <li class='header-list'><%= link_to 'よくある質問', '#'%>
+       <li class='header-list'> <%= button_to 'ご利用の流れ', '#'%>
+       <li class='header-list'><%= button_to 'よくある質問', '#'%>
       </ul>
      <ul class='lists-right'>
         <% if user_signed_in?%>
           <li class='header-list'><%= " #{current_user.user_nickname}さん、ようこそ" %>
-          <li class='header-list'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
+          <li class='header-list'><%= button_to 'ログアウト', destroy_user_session_path, method: :delete%>
         <% else%>
-          <li class='header-list'><%= link_to '新規登録', new_user_registration_path%>
-          <li class='header-list'><%= link_to 'ユーザーログイン', new_user_session_path%>
+          <li class='header-list'><%= button_to '新規登録', new_user_registration_path%>
+          <li class='header-list'><%= button_to 'ユーザーログイン', new_user_session_path%>
         <%end%>
  
        <% if chef_signed_in? %>
        <li class='header-list'><%= " #{current_chef.chef_nickname}シェフ、ようこそ" %>
       
        
-        <li class='header-list'><%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
+        <li class='header-list'><%= button_to 'ログアウト', destroy_chef_session_path, method: :delete%>
       
        <% else%>
-        <li class='header-list'><%= link_to 'シェフ募集', new_chef_registration_path%>
-        <li class='header-list'><%= link_to 'ログイン', new_chef_session_path%>
+        <li class='header-list'><%= button_to 'シェフ募集', new_chef_registration_path%>
+        <li class='header-list'><%= button_to 'ログイン', new_chef_session_path%>
        <%end%>
      </ul>
    </div>
