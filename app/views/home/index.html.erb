@@ -1,23 +1,54 @@
- <h1> Chefs</h1>
-      <% if user_signed_in?%>
-      <%= "ログイン中のユーザー #{current_user.user_nickname}" %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete%>
-      <% else%>
-       <%= link_to 'ユーザー新規登録', new_user_registration_path%>
-       <%= link_to 'ユーザーログイン', new_user_session_path%>
-       <%end%>
-        
-        <%= link_to 'シェフログイン', new_chef_session_path%>
- 
-    <% if chef_signed_in? %>
-      <%= "ログイン中のシェフ #{current_chef.chef_nickname}" %>
-      
-       <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
-      <%= link_to 'ログアウト', destroy_chef_session_path, method: :delete%>
-      
-      <% else%>
-       <%= link_to 'シェフ新規登録', new_chef_registration_path%>
-       <%= link_to 'ログイン', new_chef_session_path%>
-       <%end%>
- 
- 
+
+
+ <%= render "shared/header" %>
+ <div class="main-board">
+   <div class="main-image">   
+    </div>
+      <div class="main-contents">
+       <h2 class="title">
+         関西で一流の<br>
+         シェフのお料理を<br>
+         ご家庭で気軽に食べらる<br>
+        </h2>
+        <h4 class="subtitle">
+         記念日やホームパーティ<br>
+         お料理教室など<br>
+         プロがあなたの要望にお答えします
+        </h4>
+      </div>
+  </div>
+</div>
+
+  <div class='chefs-contents'>
+    <ul class='chef-lists'>
+       <%# <% if @chefs[0] != nil %>  
+      <%# <% @chefs.each do |chef| %> 
+         <%=link_to '#' do %>
+           <div class='chef-avatar-content'>
+            <%# <%= image_tag chef.avatar, class: "chef-avatar" %> 
+            </div>
+        <%# <% end %>  
+     <% end %>  
+    </ul>
+   </div> 
+  <div class="course-contents">
+  <h2 class="course-title">おすすめシェフ</h2>
+    <ul class='course-lists'>
+       <%# <% if @courses[0] != nil %>  
+       <% @courses.each do |course| %>
+         <div class='course-img-content'>
+          <%= image_tag course.course_images[0], class: "course-img" %>
+          <%# <% if course.purchase.present? %>
+         <%# <% end  %> 
+         </div> 
+           <%# <div class='course-info'>
+             <h3 class='course-name'>
+              <%= course.course_title %>
+             <%#</h3>  
+             <%# <div class='course-price'>
+              <span><%= course.price %>
+             <%# </div>   %>
+         <%# </div> %>
+          <% end %> 
+      </ul>
+   </div> 

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: 'chefs/registrations'
   }
    namespace :chefs do
-    resources :courses, only: [:index , :new, :create]
+    resources :courses, only: [:index , :new, :create,:show]
      end
 
   devise_for :users, controllers: {
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   namespace :users do
-    resources :reservations, only: [:index , :new, :create]
+    resources :reservations, only: [:index , :new, :create,:show]
   end
 
 
