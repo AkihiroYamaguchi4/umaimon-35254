@@ -46,10 +46,12 @@
 .header-list {
   list-style: none;
   border: white 1px;
-  margin-right: 2px;
+  margin-right: 4px;
+  box-shadow: 2px 2px 0 0 black;
+  border-radius: 7px;
 }
 
-.lists-left {
+  .lists-left {
   display: flex;
   
 }

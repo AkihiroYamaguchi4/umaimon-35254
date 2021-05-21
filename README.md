@@ -18,7 +18,7 @@
 - ruby '2.6.5'
 - VSCode (Visual Studio Code)
 
-# DEMO(gifで動画や写真を貼って、ビューのイメージを掴んでもらいます)						
+# DEMO
 - 一覧ページ
 [![Image from Gyazo](https://i.gyazo.com/c69baa44bc04642391343ac8def00383.jpg)](https://gyazo.com/c69baa44bc04642391343ac8def00383)
 
